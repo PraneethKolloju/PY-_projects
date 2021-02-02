@@ -1,0 +1,45 @@
+from IPython.display import clear_output
+def main():
+  cart=[]
+  clearcart()
+  print('    WELCOME TO GROCERY26   ')
+  print('enter the no.of products to be purchased')
+  num=int(input())
+  print('No.of products to be added to cart are {}'.format(num))
+  for i in range(num):  
+    print('add a product')
+    item=input()
+    additem(item)
+  print('enter 1 to remove an item\t\t\t\t enter 2 to clear your cart') 
+  choice=int(input('Enter your choice\n'))
+  if choice==2 :
+    clearcart()
+  elif choice==1 :
+    print('enter item to be removed from the cart')
+    item=input()
+    removeitem(item)
+  else:
+    print('Invalid input')    
+    
+
+  
+def additem(item):
+  clear_output()
+  cart.append(item)
+  print('{} is added to your cart'.format(item.title()))
+  showcart()
+def removeitem(item):
+  clear_output
+  cart.remove(item)
+  print('{} is removed from your cart'.format(item.title()))
+  showcart()
+def clearcart():
+  clear_output()
+  cart.clear()  
+  print('cart is now empty')
+def showcart(): 
+  print('Products in cart are:')
+  for i in cart:
+    print(i)
+
+main()
